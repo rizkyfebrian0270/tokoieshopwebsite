@@ -259,16 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 pesan += `   - Harga Total: Rp ${(hargaBersih * item.qty).toLocaleString('id-ID')}\n\n`;
                 subtotal += (hargaBersih * item.qty);
             });
-
-            // Tambahkan rincian harga di bawahnya (sesuai perhitungan keranjangmu)
-            const biayaPenanganan = 1000;
-            const totalAkhir = subtotal + biayaPenanganan;
             
-            pesan += `-------------------------\n`;
-            pesan += `*Subtotal:* Rp ${subtotal.toLocaleString('id-ID')}\n`;
-            pesan += `*Biaya Penanganan:* Rp ${biayaPenanganan.toLocaleString('id-ID')}\n`;
-            pesan += `*TOTAL PEMBAYARAN: Rp ${totalAkhir.toLocaleString('id-ID')}*\n`;
-            pesan += `-------------------------\n\n`;
             pesan += `Mohon info ketersediaan stok dan instruksi pembayarannya ya. Terima kasih!`;
 
             // Ubah teks menjadi format URL yang dipahami browser & WhatsApp
