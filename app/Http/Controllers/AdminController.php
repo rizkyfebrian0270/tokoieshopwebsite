@@ -77,7 +77,7 @@ class AdminController extends Controller
             'nama' => $request->name
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Mantap! Kategori baru berhasil ditambahkan.');
     }
 
     // Fungsi Menyimpan Produk Baru
@@ -103,7 +103,7 @@ class AdminController extends Controller
             'ketersediaan_stok' => 'tersedia'
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Mantap! Produk baru berhasil ditambahkan ke katalog.');
     }
 
     // --- FITUR KATEGORI ---
@@ -111,13 +111,13 @@ class AdminController extends Controller
     {
         $category = Category::findOrFail($id);
         $category->update(['nama' => $request->name]);
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Mantap! Kategori berhasil diperbarui.');
     }
 
     public function destroyCategory($id)
     {
         Category::findOrFail($id)->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data kategori berhasil dihapus secara permanen.');
     }
 
     // --- FITUR PRODUK ---
@@ -148,7 +148,7 @@ class AdminController extends Controller
             'ketersediaan_stok' => $request->status // Untuk mengubah status Tersedia/Habis
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Mantap! Produk baru berhasil diperbarui.');
     }
 
     public function destroyProduct($id)
@@ -159,6 +159,6 @@ class AdminController extends Controller
             Storage::disk('public')->delete($product->foto);
         }
         $product->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data produk berhasil dihapus secara permanen.');
     }
 }
