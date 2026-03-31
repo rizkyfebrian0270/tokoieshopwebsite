@@ -32,9 +32,17 @@
             <h3 class="text-lg font-semibold mb-4">Ikuti Kami</h3>
 
             <div class="flex gap-4 mb-6 text-xl">
-                <span class="bg-white/10 p-2 rounded-full hover:bg-white/20 cursor-pointer"><i class="fa-brands fa-instagram"></i></span>
-                <span class="bg-white/10 p-2 rounded-full hover:bg-white/20 cursor-pointer"><i class="fa-brands fa-facebook"></i></span>
-                <span class="bg-white/10 p-2 rounded-full hover:bg-white/20 cursor-pointer"><i class="fa-brands fa-tiktok"></i></span>
+                <a href="https://www.instagram.com/ieshopp.official/" target="_blank" class="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors flex items-center justify-center w-10 h-10">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/share/18QRNtvaJL/" target="_blank" class="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors flex items-center justify-center w-10 h-10">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                
+                <a href="https://tiktok.com/@username_tiktok_kamu" target="_blank" class="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors flex items-center justify-center w-10 h-10">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
             </div>
 
             <a href="https://wa.me/+6285777732464" target="_blank"
