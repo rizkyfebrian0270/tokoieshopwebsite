@@ -80,6 +80,12 @@ class HomeController extends Controller
         
         $query = $this->buildProductQuery($request);
         
+        // --- TAMBAHAN LOGIKA PENCARIAN DI HOMEPAGE ---
+        if ($request->filled('search')) {
+            $keyword = $request->search;
+            $query->where('nama', 'LIKE', '%' . $keyword . '%');
+        }
+        
         // Hitung total asli sebelum dipotong
         $totalProducts = $query->count(); 
         // Potong hanya ambil 12
@@ -96,8 +102,15 @@ class HomeController extends Controller
         $categories = Category::all();
         $sizes = $this->getSizesList();
         
+        // Hapus baris '$query = Product::query();' yang ganda/redundan sebelumnya
         $query = $this->buildProductQuery($request);
         
+        // --- LOGIKA PENCARIAN DI KATALOG ---
+        if ($request->filled('search')) {
+            $keyword = $request->search;
+            $query->where('nama', 'LIKE', '%' . $keyword . '%');
+        }
+
         // Ambil semua tanpa dibatasi
         $products = $query->get();
         $totalProducts = $products->count();

@@ -63,6 +63,25 @@
 
                             <form action="{{ url('/') }}" method="GET" id="formFilter" class="bg-gray-50 md:bg-transparent p-5 md:p-0 rounded-2xl md:rounded-none border border-gray-100 md:border-none mb-8 md:mb-0 shadow-inner md:shadow-none">
                                 
+                            <div class="mb-8">
+                                <h3 class="text-xs font-bold text-gray-400 tracking-widest uppercase mb-4">Pencarian</h3>
+                                <div class="relative">
+                                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama produk..." 
+                                        class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#2c3821] focus:border-transparent transition-all text-sm shadow-sm placeholder-gray-400 text-gray-700">
+                                    
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                    </div>
+
+                                    @if(request('search'))
+                                        <a href="{{ url()->current() }}" class="absolute inset-y-0 right-0 pr-3 flex items-center text-red-400 hover:text-red-600 transition-colors">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                        </a>
+                                    @endif
+                                </div>
+                                <button type="submit" class="hidden">Cari</button>
+                            </div>
+
                                 <div class="mb-8 md:mb-10">
                                     <h3 class="text-xs font-bold text-gray-400 tracking-widest uppercase mb-4">Kategori</h3>
                                     <div class="flex flex-wrap gap-2 text-sm">
@@ -223,6 +242,25 @@
                         heroSection.style.pointerEvents = 'auto';
                     }
                 });
+            }
+
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Jika URL memiliki parameter 'search', 'category', atau 'size'
+            if (urlParams.has('search') || urlParams.has('category') || urlParams.has('size')) {
+                
+                // 2. Cari elemen yang memiliki id="katalog"
+                const katalogSection = document.getElementById('katalog');
+                
+                if (katalogSection) {
+                    // Beri sedikit jeda agar halaman ter-render sempurna, lalu scroll ke bawah
+                    setTimeout(() => {
+                        katalogSection.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    }, 100); // jeda 100 milidetik
+                }
             }
         });
     </script>

@@ -1,8 +1,12 @@
 <nav class="fixed top-6 left-0 right-0 z-50 px-4 flex justify-center pointer-events-none">
     <div class="relative bg-white/80 backdrop-blur-xl shadow-lg shadow-gray-200/50 border border-white rounded-3xl md:rounded-full px-6 py-3 md:px-8 md:py-4 flex flex-wrap items-center justify-between w-full max-w-5xl pointer-events-auto transition-all duration-300">
         
-        <a href="/" class="text-2xl font-black tracking-tighter text-[#2c3821] flex items-center gap-1 hover:scale-105 transition-transform duration-300">
-            IE<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#4b5d3a] to-[#7a935b]">SHOP</span>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
+
+        <a href="/" class="flex items-center gap-1 hover:scale-105 transition-transform duration-300" style="font-family: 'Playfair Display', serif;">
+            <span class="text-3xl font-black text-[#D4AF37] tracking-widest">IE</span>
+            
+            <span class="text-3xl font-black text-[#D4AF37] tracking-widest">SHOP</span>
         </a>
         
         <ul class="hidden md:flex items-center gap-10">
