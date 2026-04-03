@@ -148,7 +148,7 @@ class AdminController extends Controller
             'ketersediaan_stok' => $request->status // Untuk mengubah status Tersedia/Habis
         ]);
 
-        return redirect()->back()->with('success', 'Mantap! Produk baru berhasil diperbarui.');
+        return redirect()->back()->with('success', 'Mantap! Produk berhasil diperbarui.');
     }
 
     public function destroyProduct($id)
